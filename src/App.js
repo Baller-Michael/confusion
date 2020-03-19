@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from '../src/components/MainComponent';
+import { BrowserRouter } from 'react-router-dom';
 import { DISHES } from './shared/dishes';
 import './App.css'
 
@@ -11,9 +12,13 @@ class App extends React.Component {
     };
   };
   render() {
-    return <div>
-      <Main />
-    </div>
+    return (
+      <BrowserRouter>
+        <div>
+          <Main />
+        </div>
+      </BrowserRouter>
+    )
   }
 };
 
