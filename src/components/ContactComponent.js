@@ -22,7 +22,6 @@ class Contact extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.handlerBlur = this.handlerBlur.bind(this);
     }
 
     handleInputChange(event) {
@@ -43,7 +42,7 @@ class Contact extends React.Component {
     }
 
 
-    handlerBlur = (field) => (evt) => {
+    handleBlur = (field) => (evt) => {
         this.setState({
             touched: { ...this.state.touched, [field]: true }
         })
@@ -136,7 +135,7 @@ class Contact extends React.Component {
                                         value={this.state.firstname}
                                         valid={errors.firstname === ''}
                                         invalid={errors.firstname !== ''}
-                                        onBlur={this.handlerBlur('firstname')}
+                                        onBlur={this.handleBlur('firstname')}
                                         onChange={this.handleInputChange} />
                                     <FormFeedback> {errors.firstname} </FormFeedback>
                                 </Col>
@@ -149,7 +148,7 @@ class Contact extends React.Component {
                                         value={this.state.lastname}
                                         valid={errors.lastname === ''}
                                         invalid={errors.lastname !== ''}
-                                        onBlur={this.handlerBlur('lastname')}
+                                        onBlur={this.handleBlur('lastname')}
                                         onChange={this.handleInputChange} />
                                     <FormFeedback> {errors.lastname} </FormFeedback>
                                 </Col>
@@ -162,7 +161,7 @@ class Contact extends React.Component {
                                         value={this.state.telnum}
                                         valid={errors.telnum === ''}
                                         invalid={errors.telnum !== ''}
-                                        onBlur={this.handlerBlur('telnum')}
+                                        onBlur={this.handleBlur('telnum')}
                                         onChange={this.handleInputChange} />
                                     <FormFeedback> {errors.telnum} </FormFeedback>
                                 </Col>
@@ -175,7 +174,7 @@ class Contact extends React.Component {
                                         value={this.state.email}
                                         valid={errors.email === ''}
                                         invalid={errors.email !== ''}
-                                        onBlur={this.handlerBlur('email')}
+                                        onBlur={this.handleBlur('email')}
                                         onChange={this.handleInputChange} />
                                     <FormFeedback> {errors.email} </FormFeedback>
                                 </Col>
